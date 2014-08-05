@@ -70,6 +70,8 @@ class Hosts(object):
 
     @staticmethod
     def _process_row(row):
+        ipaddress, hostname, aliases, comments = None, None, None, None
+
         split_row = row.split()
         if len(split_row) == 4:
             ipaddress, hostname, aliases, comments = split_row
