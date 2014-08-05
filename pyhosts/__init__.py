@@ -18,7 +18,6 @@ class Hosts(object):
         self._hosts = None
 
         self.file_path = self._file_path()
-        self._rows()
 
     def __str__(self):
         return "Hosts file: %s" % self.file_path
@@ -35,9 +34,11 @@ class Hosts(object):
                 return None
 
     def __index__(self):
+        self._rows()
         return self._hosts
 
     def __iter__(self):
+        self._rows()
         return self._hosts.__iter__()
 
 

@@ -22,7 +22,7 @@ class TestBaseCases(unittest.TestCase):
     def test_content_empty(self):
         self.myhosts._readlines = lambda x: []
 
-        entries = self.myhosts._rows()
+        entries = [i for i in self.myhosts]
         expected = []
         self.assertEquals(expected, entries)
 
