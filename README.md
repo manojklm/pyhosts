@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pletisan/pyhosts.svg?branch=master)](https://travis-ci.org/pletisan/pyhosts)
+
 pyhosts
 =======
 
