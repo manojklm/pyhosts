@@ -12,8 +12,8 @@ Examples
     >>> [entry for entry in myhosts]
     [{'ipaddress': IPAddress('127.0.0.1'),       'hostname': 'localhost',               'aliases': ['localhost.localdomain'], 'comments': None},
      {'ipaddress': IPAddress('::1'),             'hostname': 'localhost6.localdomain6', 'aliases': ['localhost6'],            'comments': None},
-     {'ipaddress': IPAddress('172.19.29.156'),   'hostname': 'igor',                    'aliases': [],                        'comments': None},
-     {'ipaddress': IPAddress('192.168.122.167'), 'hostname': 'marev3',                  'aliases': [],                        'comments': "marev3"}]
+     {'ipaddress': IPAddress('172.19.29.156'),   'hostname': 'igor',                    'aliases': None,                        'comments': None},
+     {'ipaddress': IPAddress('192.168.122.167'), 'hostname': 'marev3',                  'aliases': None,                        'comments': "marev3"}]
      
     >>> myhosts.igor.ipaddress 
     IPAddress('172.19.29.156')
