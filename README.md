@@ -10,6 +10,7 @@ Python library for managing hosts file (eg. /etc/hosts) in Pythonic way:
 Examples
 ========
 
+    >>> from pyhosts import Hosts
     >>> myhosts = Hosts()
     >>> [entry for entry in myhosts]
     [{'ipaddress': IPAddress('127.0.0.1'),       'hostname': 'localhost',               'aliases': ['localhost.localdomain'], 'comments': None},
