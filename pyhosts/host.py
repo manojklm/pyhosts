@@ -2,6 +2,7 @@ import platform
 from netaddr import IPAddress
 from netaddr.core import AddrFormatError
 
+
 class Host(object):
     def __init__(self, ipaddress, hostname, aliases, comments):
         self.ipaddress = Host._ipaddress(ipaddress)
@@ -15,9 +16,9 @@ class Host(object):
 
     def __str__(self):
         return str({'ipaddress': self.ipaddress,
-                'hostname': self.hostname,
-                'aliases': self.aliases,
-                'comments': self.comments})
+                    'hostname': self.hostname,
+                    'aliases': self.aliases,
+                    'comments': self.comments})
 
     __repr__ = __str__
 
@@ -33,5 +34,5 @@ class Host(object):
 
     def __eq__(self, host):
         return (self.ipaddress == host.ipaddress and
-            self.hostname == host.hostname and
-            self.aliases == host.aliases)
+                self.hostname == host.hostname and
+                self.aliases == host.aliases)

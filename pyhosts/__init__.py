@@ -4,6 +4,7 @@ from netaddr.core import AddrFormatError
 
 from host import Host
 
+
 class PlatformNotSupportedException(Exception):
     pass
 
@@ -40,7 +41,6 @@ class Hosts(object):
     def __iter__(self):
         self._rows()
         return self._hosts.__iter__()
-
 
     def _file_path(self):
         if platform.system() == "Linux":
