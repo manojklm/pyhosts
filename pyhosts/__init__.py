@@ -55,6 +55,8 @@ class Hosts(object):
             with open(path, 'r') as f:
                 self._lines = f.readlines()
             return self._lines
+        else:
+            return self._lines
 
     def _rows(self):
         self._hosts = []
