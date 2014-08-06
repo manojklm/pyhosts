@@ -3,7 +3,7 @@
 pyhosts
 =======
 
-Pythonic way to manage hosts file
+Python library for managing hosts file (eg. /etc/hosts) in Pythonic way:
 - Is platform independent
 - Uses Python objects to manage hosts entries 
 
