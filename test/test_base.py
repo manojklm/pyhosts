@@ -51,3 +51,14 @@ class TestBaseCases(unittest.TestCase):
         self.myhosts._readlines = lambda x: ['1.1.1.1\tigor', ]
         self.assertEquals(IPAddress('1.1.1.1'), self.myhosts.igor.ipaddress)
         self.assertEquals('igor', self.myhosts.igor.hostname)
+
+    def test_format_same_as_file(self):
+        _readlines = ['127.0.0.1\tlocalhost.localdomain\tlocalhost\n',
+                      '::1\tlocalhost6.localdomain6\tlocalhost6\n',
+                      '172.19.29.156\tigor\n',
+                      '192.168.122.167\tmarev3\n']
+        self.myhosts._readlines = lambda x: _readlines
+        entries = [host for host in self.myhosts]
+
+        for first, second in zip(_readlines, entries):
+            self.assertEquals(first, str(second))

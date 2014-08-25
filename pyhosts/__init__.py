@@ -85,3 +85,12 @@ class Hosts(object):
             aliases, comments = None, None
 
         return ipaddress, hostname, aliases, comments
+
+    def persist(self, path=None):
+        """Persists current hosts collections to path"""
+        path = path if path else self.file_path
+
+        with open(path, "w") as hosts_file:
+            hosts_file.write("# Written by Pyhosts\n\n")
+            hosts_file.writelines([str(i) for i in self])
+

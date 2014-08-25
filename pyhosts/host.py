@@ -14,13 +14,29 @@ class Host(object):
     def _ipaddress(ipaddress):
         return IPAddress(ipaddress)
 
-    def __str__(self):
+    def __repr__(self):
         return str({'ipaddress': self.ipaddress,
                     'hostname': self.hostname,
                     'aliases': self.aliases,
                     'comments': self.comments})
 
-    __repr__ = __str__
+    def _str_aliases(self, aliases):
+        return " ".join(self.aliases) if self.aliases else ""
+
+    def _str_comments(self, comments):
+        return self.comments if self.comments else ""
+
+    def __str__(self):
+        return self._format_line()
+
+    def _format_line(self):
+        line = "{ipaddress}\t{hostname}\t{aliases}\t{comments}".\
+            format(ipaddress=self.ipaddress,
+                   hostname=self.hostname,
+                   aliases=self._str_aliases(self.aliases),
+                   comments=self._str_comments(self.comments))
+        line = line.strip() + "\n"
+        return line
 
     def __bool__(self):
         if not self.ipaddress and \
