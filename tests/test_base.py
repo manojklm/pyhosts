@@ -1,13 +1,13 @@
 import unittest
-from nose.tools import nottest
-from mock import MagicMock
+# from nose.tools import nottest
+# from mock import MagicMock
 
 from pyhosts import Hosts, Host
 
 from netaddr import IPAddress
 
 
-class TestBaseCases(unittest.TestCase):
+class TestCases(unittest.TestCase):
 
     def setUp(self):
         self.maxDiff = None
