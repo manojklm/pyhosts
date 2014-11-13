@@ -1,3 +1,4 @@
+import os
 import platform
 from netaddr import IPAddress
 from netaddr.core import AddrFormatError
@@ -46,7 +47,11 @@ class Hosts(object):
         if platform.system() == "Linux":
             return "/etc/hosts"
         elif platform.system() == "Windows":
-            return r"c:/windows/system32/drivers/etc/hosts"
+            win_dir = os.environ.get('WINDIR', None)
+            if win_dir is None:
+                return r"c:/windows/system32/drivers/etc/hosts"
+            else:
+                return win_dir + r"/system32/drivers/etc/hosts"
         else:
             raise PlatformNotSupportedException
 
