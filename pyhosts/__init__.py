@@ -2,7 +2,7 @@ import platform
 from netaddr import IPAddress
 from netaddr.core import AddrFormatError
 
-from host import Host
+from pyhosts.host import Host
 
 
 class PlatformNotSupportedException(Exception):
